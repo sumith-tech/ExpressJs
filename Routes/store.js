@@ -1,8 +1,9 @@
 const express = require("express");
-
+const maindir = require("../utils/pathhelper");
+const path = require("path");
 const routes = express.Router();
 
 routes.get("/", (req, res, next) => {
-  res.send("<h1>Welcome to Express<h1>");
+  res.sendFile(path.join(maindir, "views", "shop.html"));
 });
 module.exports = routes;
